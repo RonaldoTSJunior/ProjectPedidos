@@ -73,6 +73,35 @@
     </div>
 
     <script>
+        const API_URL = "https://meu-backend.onrender.com/cadastrar"; // Altere para sua URL real
+
+document.getElementById("gerarPDF").addEventListener("click", async () => {
+    const dados = {
+        razao_social: document.getElementById("razao_social").value,
+        nome_fantasia: document.getElementById("nome_fantasia").value,
+        cidade: document.getElementById("cidade").value,
+        endereco: document.getElementById("endereco").value,
+        numero_rua: document.getElementById("numero_rua").value,
+        bairro: document.getElementById("bairro").value,
+        cep: document.getElementById("cep").value,
+        cnpj: document.getElementById("cnpj").value,
+        email: document.getElementById("email").value,
+        numero_contrato_social: document.getElementById("numero_contrato_social").value,
+        telefone: document.getElementById("telefone").value,
+        nome_vendedor: document.getElementById("nome_vendedor").value,
+        telefone_vendedor: document.getElementById("telefone_vendedor").value
+    };
+
+    const response = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dados)
+    });
+
+    const resultado = await response.json();
+    alert(resultado.message || resultado.error);
+});
+
         function gerarPDF() {
             const element = document.getElementById("pedido");
 
