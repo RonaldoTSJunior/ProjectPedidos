@@ -35,6 +35,11 @@ def criar_tabela():
     conn.commit()
     conn.close()
 
+# Rota para a página principal
+@app.route('/')
+def home():
+    return "Bem-vindo ao sistema de pedidos!"
+
 # Rota para salvar os dados no banco
 @app.route('/cadastrar', methods=['POST'])
 def cadastrar():
