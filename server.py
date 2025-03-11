@@ -10,10 +10,10 @@ CORS(app)  # Permite que o frontend se comunique com o backend
 def conectar_bd():
     conn = pyodbc.connect(
         'DRIVER={ODBC Driver 17 for SQL Server};'
-        'SERVER=seu_servidor;'  # Substitua pelo nome ou IP do seu servidor
-        'DATABASE=seu_banco_de_dados;'  # Substitua pelo nome do seu banco de dados
-        'UID=seu_usuario;'  # Substitua pelo seu usuário
-        'PWD=sua_senha;'  # Substitua pela sua senha
+        'SERVER=localhost;'  # Substitua pelo nome ou IP do seu servidor
+        'DATABASE=PedidosClientes;'  # Substitua pelo nome do seu banco de dados
+        'UID=sa;'  # Substitua pelo seu usuário
+        'PWD=@elevor374;'  # Substitua pela sua senha
     )
     return conn
 
